@@ -31,6 +31,9 @@ A email designated to receive messages from the server. Examples:
 */ 	
 	define('SYSTEM_EMAIL', 'webmaster@myapp.com'); 
 
+# Default database name for this app 
+define('DB_NAME', "p2_iamkoba_org");	
+	
 # Default DB name for this app
 	define('DB', "myapp_com"); 
 

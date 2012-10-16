@@ -1,5 +1,4 @@
-<?php
-
+<?
 class base_controller {
 	
 	public $user;
@@ -7,12 +6,9 @@ class base_controller {
 	public $template;
 	public $email_template;
 
-	/*-------------------------------------------------------------------------------------------------
-	
-	-------------------------------------------------------------------------------------------------*/
 	public function __construct() {
 	
-		# Instantiate User class
+		# Instantiate a User object
 			$this->userObj = new User();
 			
 		# Authenticate / load user
@@ -24,7 +20,7 @@ class base_controller {
 								
 		# So we can use $user in views			
 			$this->template->set_global('user', $this->user);
-			
+						
 	}
 	
-} # eoc
+} 
