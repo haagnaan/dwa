@@ -29,8 +29,5 @@ class index_controller extends base_controller {
 			echo $this->template;
 
 	}
-	
-	
-	
-		
+			
 } // end class
