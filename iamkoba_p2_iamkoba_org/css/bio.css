@@ -1,0 +1,46 @@
+	body {
+			border:1px solid black;
+			width:900px;
+			margin:0px auto;
+			background-color:#d0e4fe;
+
+
+			-webkit-border-radius: 12px;
+			border-radius: 12px;
+			-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+			padding:30px;
+			}
+	input { font-size: 13px; padding: 2px 5px;}
+	a { color: blue;}
+	p { margin:0; color:blue; font-size: 13px; padding: 20px 10px; }
+	div,p { margin-left:10px; }
+
+	
+	
+	div.panel
+		{
+			margin:0px auto;
+			padding:5px;
+			text-align:center;
+			font-family: 'Calibri', sans-serif;
+			font-size: 18px;
+			background-color:#d0e4fe;
+			border:solid 1px #c3c3c3;
+			height:300px;
+			width:450px;
+		}
+			div.flip
+				{
+					margin:0px auto;
+					padding:5px;
+					text-align:center;
+					height 25px;
+					width:450px;
+					background-color:#d0e4fe;
+					color:white;
+					border:solid 1px #c3c3c3;
+				}
+				
+	#footer {
+		clear:both;
+			}
