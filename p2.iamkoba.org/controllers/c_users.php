@@ -14,11 +14,13 @@ class users_controller extends base_controller {
 
 		# Set up template
 			$this->template->content = View::instance("v_users_signup");
-
+			$this->template->title = "Signup";
+			
 		# Render the template
 		echo $this->template;
-
 		}
+
+		
 
 
 /*-------------------------------------------------------------------------------------------------
@@ -26,20 +28,24 @@ class users_controller extends base_controller {
 		public function p_signup() {
 
 		# What data was submitted
-		//print_r($_POST);
-
+			//print_r($_POST);
+			
+			
 		# Encrypt password
 		$_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
 
 		# Create and encrypt token
-		$_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
-
 		# Store current timestamp
 		$_POST['created'] = Time::now(); # This returns the current timestamp
 		$_POST['modified'] = Time::now();
+		$_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
 
 		# Insert
 		DB::instance(DB_NAME)->insert('users', $_POST);
+		
+		#added this on 1112012
+		$token = $_POST['token'];
+		@setcookie('token', $token, strtotime('+1 week'), '/');
 
 		echo "You're registered! Now go <a href='/users/login'>login</a>";
 
@@ -48,14 +54,19 @@ class users_controller extends base_controller {
 
 /*-------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------*/
-		public function login() {
+		public function login($error = NULL) {
 
 			# Load the template
 			$this->template->content = View::instance("v_users_login");
-
+				
+				
+			# Pass data to the view
+			$this->template->content->error = $error;
+						
 			# Render the template
 			echo $this->template;
-
+			
+			
 			}
 
 
@@ -73,16 +84,16 @@ class users_controller extends base_controller {
 			$q = "SELECT token
 			FROM users
 			WHERE email = '".$_POST['email']."'
-			AND password = '".$_POST['password']."'
-			";
-
-			echo $q;
-
-			$token = DB::instance(DB_NAME)->select_field($q);
+			AND password = '".$_POST['password']."'";
+	
+				$token = DB::instance(DB_NAME)->select_field($q);
 
 			# Login failed
-			if($token == "") {
-			//Router::redirect("/users/login");
+			if(!$token) {
+				Router::redirect("/users/login/error");
+				
+				echo "Users must register to login";
+				
 			}
 			# Login passwed
 			else {
@@ -113,29 +124,31 @@ class users_controller extends base_controller {
 				setcookie("token", "", strtotime('-1 year'), '/');
 
 				echo "You have been logged out.";
-				
+				# ADDED THIS ON 1112012 TO REDIRECT USERS TO THE SIGNON PAGE
+				Router::redirect('/');
 				
 				}
 
 
 /*-------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------*/
-			public function profile($user_name = NULL) {
+			public function profile() {
 
 				# Not logged in
 				if(!$this->user) {
-				echo "Members only. <a href='/users/login/'>Please login.</a>";
-				return;
+					echo "Members only. <a href='/users/login/'>Please login.</a>";
+					return;
 				}
 
 				# Logged in
 				if($user_name == NULL) {
-				echo "You did not specify a user";
-				} else {
+						echo "You did not specify a user";
+					} 
+						else {
 
 				# Setup the view
-				$this->template->content = View::instance("v_users_profile");
-				$this->template->title = "Profile for ".$user_name;
+					$this->template->content = View::instance("v_users_profile");
+						$this->template->title = "Profile for ".$user_name;
 
 				# Don't need to pass any variables to the view because all we need is $user and that's already set globally in c_base.php
 

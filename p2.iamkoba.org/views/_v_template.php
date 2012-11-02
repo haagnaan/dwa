@@ -8,8 +8,11 @@
 	<!-- JS -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+	<link rel="SHORTCUT ICON" href="http://iamkoba.org/dwa/favicon.ico">
+
 				
 	<!-- Controller Specific JS/CSS -->
+	<link rel="stylesheet" href="/css/bio.css" type="text/css"> 
 	<?php echo @$client_files; ?>
 	
 </head>
