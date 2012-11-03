@@ -46,8 +46,9 @@ class users_controller extends base_controller {
 		#added this on 1112012
 		$token = $_POST['token'];
 		@setcookie('token', $token, strtotime('+1 week'), '/');
+		
 
-		echo "You're registered! Now go <a href='/users/login'>login</a>";
+		echo "You're registered! Check your email for confirmation and go <a href='/users/login'>here</a> to login";
 
 		}
 
