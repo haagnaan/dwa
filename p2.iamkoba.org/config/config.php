@@ -33,7 +33,7 @@ A email designated to receive messages from the server. Examples:
 
 	
 # Default DB name for this app
-	define('DB_NAME', "p2.iamkoba.org"); 
+	define('DB_NAME', "iamkoba_p2_iamkoba_org"); 
 		
 		
 # Timezone define('TIMEZONE', 'American/New_York');
