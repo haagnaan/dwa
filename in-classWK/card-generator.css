@@ -1,0 +1,168 @@
+* {
+	font-family:verdana;
+}
+
+#wrapper {
+	width:960px;
+	margin:0px auto;
+}
+
+h1 {	
+	text-align:center;
+	font-size:30px;
+	margin-top:25px;
+	margin-bottom:25px;
+}
+
+#left-side {
+	width:425px;
+	margin-right:50px;
+	float:left;
+}
+
+#right-side {
+	width:400px;
+	float:left;
+}
+
+#card {
+	background-image:url('images/card-background.jpg');
+	background-repeat:no-repeat;
+	height:513px;
+	width:369px;
+	margin:0px auto;
+}
+
+#canvas {
+	width:338px;
+	height:469px;
+	position:relative;
+	top:33px;
+	left:16px;
+	overflow:hidden;
+}
+
+.footer {
+	clear:both;
+}
+
+
+h2 {
+	font-family:Verdana;
+	font-size:15px;
+	margin-top:30px;
+	margin-bottom:5px;
+	border-bottom:1px dotted #ccc;
+}
+
+.color-choice {
+	cursor:pointer;
+	width:30px;
+	height:30px;
+	float:left;
+	margin-right:5px;
+}
+
+.texture-choice {
+	cursor:pointer;
+	width:80px;
+	height:35px;
+	border:1px solid #eee;
+	float:left;
+	margin-right:5px;
+}
+
+.texture-choice.choice-1 {
+	background-image:url('images/texture_1.png');
+}
+
+.texture-choice.choice-2 {
+	background-image:url('images/texture_2.png');
+}
+
+.texture-choice.choice-3 {
+	background-image:url('images/texture_3.png');
+}
+
+.texture-choice.choice-4 {
+	background-image:url('images/texture_4.png');
+}
+
+	
+.color-choice.red {
+	background-color:red;
+}
+
+.color-choice.orange {
+	background-color:orange;
+}
+
+.color-choice.yellow {
+	background-color:yellow;
+}
+
+.color-choice.green {
+	background-color:green;
+}
+
+.color-choice.blue {
+	background-color:blue;
+}
+
+.color-choice.indigo {
+	background-color:#11F5F5;
+}
+
+.color-choice.violet {
+	background-color:#E5A7FA;
+}
+
+.graphic-choice {
+	cursor:pointer;
+}
+
+.draggable {
+	cursor:move;
+}
+
+.new-draggable {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+#message-in-canvas {
+	width:100%;
+	padding-top:100px;
+	text-align:center;
+	font-size:35px;
+	font-family:georgia;
+	z-index:999;
+}
+
+#recipient {
+	font-size:20px;
+}
+
+#recipient-in-canvas {
+	font-family:georgia;
+	width:100%;
+	text-align:center;
+	font-size:30px;
+	z-index:999;
+}
+
+.error {
+	color:red;
+	font-size:10px;
+	height:15px;
+}
+
+
+.graphic-search-image {
+	margin-right:5px;
+}
+
+.graphic-search-results {
+	margin-top:5px;
+}

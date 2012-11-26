@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="card-generator.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.18/jquery.min.js"></script>
+	<script type="text/javascript" src="card-generator.js"></script>
+	<script type="text/javascript" src="js/chard-generator-template.js"></script>
+	<script type="text/javascript" src="js/class1.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/chard-generator-template.css">
+	<link rel="SHORTCUT ICON" href="http://iamkoba.org/dwa/p1/favicon.ico">
+	<script type='text/javascript'>
+		
+		$(document).ready(function() { // start doc ready; do not delete this!
+		
+					
+		}); // end doc ready; do not delete this!
+		
+	</script>
+
+
+</head>
+
+
+<body>
+	<div id='wrapper'>
+
+	<!-- HEADING -->
+	<h1>Card Generator</h1>
+	
+	<div id='left-side'>
+	<!-- CARD SETTINGS ON THE LEFT -->
+	<h2>Pick a color</h2>
+			<div class='color-choice red'></div>
+			<div class='color-choice orange'></div>
+			<div class='color-choice yellow'></div>
+			<div class='color-choice green'></div>
+			<div class='color-choice blue'></div>
+			<div class='color-choice indigo'></div>
+			<div class='color-choice violet'></div>
+			<br><br>
+	<h2>Pick a Font</h2>
+		<div class='font-family Arial'></div>
+		<div class='font-family Gothic'></div>
+		<div class='font-family Verdana'></div>
+		<div class='font-family Vijaya'></div>
+		<div class='font-family SimHei'></div>
+		<div class='font-family Papyrus'></div>
+		<br>
+		<!-- <div class='color-choice' id='indigo'></div>
+		<div class='color-choice' id='violet'></div>
+		
+		<br> -->
+		
+		<h2>Pick a texture</h2>
+			<div class='texture-choice choice-1'></div>
+			<div class='texture-choice choice-2'></div>
+			<div class='texture-choice choice-3'></div>
+			<div class='texture-choice choice-4'></div>
+			<div class='footer'></div>	
+		
+		<br>
+		
+		<h2>Pick a message</h2>
+			<input type='radio' name='message' value='Happy Birthday,'><label for='happy-birthday'>&nbsp;Happy Birthday</label><br>
+			<input type='radio' name='message' value='Thank You,'><label for='thank-you'>&nbsp;Thank You</label><br>
+			<input type='radio' name='message' value='Congratulations,'><label for='congratulations'>&nbsp;Congratulations</label><br>
+			<input type='radio' name='message' value='I miss you,'><label for='miss-you'>&nbsp;I miss you</label><br>
+		
+		
+		<h2>Enter your recipient</h2>
+		<input type='text' id='recipient' maxlength="14"> <br><br>
+		<input type='button' id='refresh-button' value='Clear Content'>
+			<div class='error' id='recipient-error'></div>
+		
+		<br>
+		
+		<h2>Add some graphics</h2>
+			<img class='graphic-choice' src='images/graphic_burst.png'>
+			<img class='graphic-choice' src='images/graphic_gift_2.png'>
+			<img class='graphic-choice' src='images/graphic_gift_3.png'><br>
+			<img class='graphic-choice' src='images/graphic_gift.png'>
+			<img class='graphic-choice' src='images/graphic_heart.png'>
+			<img class='graphic-choice' src='images/graphic_star.png'>
+			<br>
+			
+			
+		<!-- Graphics Search -->	
+		<h2>Add some stickers</h2>
+			<small>ex: "birthday", "cute", "balloons"</small><br>
+			<input type='text' id='graphic-search-input'>
+			<input type='button' id='graphic-search-button' value='Search'>
+			<div id='graphic-search-results'></div>
+			
+		<!-- Finalize Buttons -->
+		<br><br>
+		<input type='button' id='refresh-button' value='Clear Card'>
+		<input type='button' id='print-button' value='Print'>
+	</div>
+	
+	<!-- CARD SETTINGS ON THE RIGHT -->
+	
+	<!-- The Card -->
+	<div id='right-side'>
+		<div id='card'>
+			<div id='canvas'>
+				<div id='message-in-canvas'></div>
+				<div id='recipient-in-canvas'></div>
+			</div>
+		</div>
+	</div>
+	<!--<div id='right-side'>
+		<div id='card'>
+        	<div id='canvas'>
+        		<div id='message'></div>
+	        	<div id='recipient-output'></div>
+        	</div>
+        </div>
+	</div> -->
+	
+	<!-- FOOTER -->
+	<div class='footer'></div>
+	<!-- <div id='footer'></div> -->
+	
+	
+</div>
+	
+	
+</body>
+
+</html>
