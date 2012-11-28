@@ -1,0 +1,9 @@
+2012-11-03 23:21:01 - INFO --> Controller/Method: users/p_signup 
+2012-11-03 23:21:02 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY webmaster@myapp.com 
+2012-11-03 23:21:02 - INFO --> From: My App (webmaster@myapp.com) 
+2012-11-03 23:21:02 - INFO --> To:  (lazai1@yahoo.com),  
+2012-11-03 23:21:02 - INFO --> CC:  
+2012-11-03 23:21:02 - INFO --> BCC:  
+2012-11-03 23:21:02 - INFO --> Subject: Welcome to iamkoba 
+2012-11-03 23:21:02 - INFO --> Body: Hi james, welcome to the app 
+2012-11-03 23:21:03 - INFO --> FAILED TO SEND EMAIL 
