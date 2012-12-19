@@ -1,0 +1,10 @@
+	#error {
+	color:red;
+	font-size:10px;
+	display:none;
+	}
+	
+	.needsfilled {
+	background:red;
+	color:white;
+		}
