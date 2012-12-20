@@ -8,6 +8,7 @@
 	<!-- JS -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js"></script>
 	<link rel="SHORTCUT ICON" href="http://iamkoba.org/dwa/favicon.ico">
 
 				
@@ -17,30 +18,36 @@
 	
 </head>
 
-<body>	
+<body>
+
+	<div id='wrapper'>
+		
+		<h1>Iamkoba (Nulla Deditio)</h1>
 		
 		<div id='menu'>
 	
-		<!-- Menu for users who are logged in -->
-		<? if($user): ?>
+			<!-- Menu for users who are logged in -->
+			<? if($user): ?>
+				
+				<a href='/users/logout'>Logout</a>
+				<a href='/posts/users/'>Change who you're following</a>
+				<a href='/posts/'>View posts</a>
+				<a href='/posts/add'>Add a new post</a>
 			
-			<a href='/users/logout'>Logout</a>
-			<a href='/posts/users/'>Change who you're following</a>
-			<a href='/posts/'>View posts</a>
-			<a href='/posts/add'>Add a new post</a>
-		
-		<!-- Menu options for users who are not logged in -->	
-		<? else: ?>
-		
-			<a href='/users/signup'>Sign up</a>
-			<a href='/users/login'>Log in</a>
-		
-		<? endif; ?>
+			<!-- Menu options for users who are not logged in -->	
+			<? else: ?>
+			
+				<a href='/users/signup'>Sign up</a>
+				<a href='/users/login'>Log in</a>
+			
+			<? endif; ?>
 	
+		</div>
+	
+		<br>
+		<?=$content;?> 
+
 	</div>
 	
-	<br>
-	<?=$content;?> 
-
 </body>
 </html>

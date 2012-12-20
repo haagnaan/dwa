@@ -1,19 +1,29 @@
 	body {
-			border:1px solid black;
-			width:900px;
 			margin:0px auto;
 			background-color:#d0e4fe;
-
-
+			}
+			
+	#wrapper {
+			width:560px;
+			margin: 0 auto;
+			background-color:#fff;	
 			-webkit-border-radius: 12px;
 			border-radius: 12px;
 			-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 			padding:30px;
+			border:1px solid #ccc;
 			}
+			
+			
+	#fcontent{
+		background-color:#ccc;
+		padding:20px;
+		width:400px
+	}
+	
 	input { font-size: 13px; padding: 2px 5px;}
 	a { color: blue;}
 	p { margin:0; color:blue; font-size: 13px; padding: 20px 10px; }
-	div,p { margin-left:10px; }
 
 	
 	

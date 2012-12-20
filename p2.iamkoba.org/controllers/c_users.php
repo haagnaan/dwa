@@ -16,6 +16,13 @@ class users_controller extends base_controller {
 			$this->template->content = View::instance("v_users_signup");
 			$this->template->title = "Signup";
 			
+		#load CSS / JS files to Validate
+		$client_files = Array(
+			"/js/validate.js",
+			"/css/validate.css"
+			);
+		
+			
 		# Render the template
 		echo $this->template;
 		}
@@ -40,15 +47,24 @@ class users_controller extends base_controller {
 		$_POST['modified'] = Time::now();
 		$_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
 
-		# Insert
-		DB::instance(DB_NAME)->insert('users', $_POST);
+		# Insert this into the database (added this line based on class example 12/13/12)
+		$user_id = DB::instance(DB_NAME)->insert('users', $_POST);
 		
 		#added this on 1112012
 		$token = $_POST['token'];
-		@setcookie('token', $token, strtotime('+1 week'), '/');
+		@setcookie('token', $token, strtotime('-1 week'), '/');
 		
+		// add an if statement here
+		
+		
+		#send user(s) back to login page to re-login
+		
+		// load the view 
 
-		echo "You're registered! Check your email for confirmation and go <a href='/users/login'>here</a> to login";
+// and echo the page view
+
+		Router::redirect("/users/login");
+		
 
 		}
 
@@ -59,7 +75,7 @@ class users_controller extends base_controller {
 
 			# Load the template
 			$this->template->content = View::instance("v_users_login");
-				
+			$this->template->title	 = "Login";	
 				
 			# Pass data to the view
 			$this->template->content->error = $error;
@@ -83,11 +99,11 @@ class users_controller extends base_controller {
 
 			# Look for a matching email and password in the DB - retrieve token if we find it
 			$q = "SELECT token
-			FROM users
-			WHERE email = '".$_POST['email']."'
-			AND password = '".$_POST['password']."'";
+				FROM users
+				WHERE email = '".$_POST['email']."'
+				AND password = '".$_POST['password']."'";
 	
-				$token = DB::instance(DB_NAME)->select_field($q);
+			$token = DB::instance(DB_NAME)->select_field($q);
 
 			# Login failed
 			if(!$token) {
@@ -99,12 +115,13 @@ class users_controller extends base_controller {
 			# Login passwed
 			else {
 			setcookie("token", $token, strtotime('+2 weeks'), '/');
+			# Send user to login in page
 			Router::redirect("/");
 				}
 
 			}
 
-
+			
 
 
 /*-------------------------------------------------------------------------------------------------
@@ -135,7 +152,7 @@ class users_controller extends base_controller {
 -------------------------------------------------------------------------------------------------*/
 			public function profile() {
 
-				# Not logged in
+				# Not logged in (not sure of this code
 				if(!$this->user) {
 					echo "Members only. <a href='/users/login/'>Please login.</a>";
 					return;

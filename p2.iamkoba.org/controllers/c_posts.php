@@ -82,7 +82,7 @@ class posts_controller extends base_controller {
 	# Store our results (an array) in the variable $connections
 	$connections = DB::instance(DB_NAME)->select_array($q, 'user_id_followed');
 		
-		echo Debug::dump($connections, "connections");
+		# echo Debug::dump($connections, "connections"); disabled the debugger on the post pg 12/14/12
 
 		
 	# Pass data (users and connections) to the view
